@@ -354,7 +354,7 @@ debit_number = "1224-1320-1256-0986"
 # last_digits = debit_number[-4:]
 # print(f"****-****-****-{last_digits}")
 
-credit_number = debit_number[::-1]
+# credit_number = debit_number[::-1]
 
 # print(credit_number)
 
@@ -429,5 +429,113 @@ price3 = 3532822.99
 #     num = int(input("Enter a number btw 1 and 10: "))
 
 # print(f"Your number is {num} 👍")
+
+# ##################################################################################
+
+# FOR LOOP
+# = execute a block of code a fixed  number of times.
+# You can iterate over a range, string, sequence, etc.
+
+# for counter in range(1, 11): # range(start, end)
+#     print(counter)
+
+# print("Happy New Year 2025 🎉🎊😁😍")
+
+# for counter in reversed(range(1, 11)): # count backward
+#     print(counter)
+    
+# print("Happy New Year 2025 🎉🎊😁😍")
+
+# for counter in range(1, 11, 2): # range(start, end, step)
+#     print(counter)
+
+# print("Happy New Year 2025 🎉🎊😁😍")
+
+# credit_number = "9827-2356-8468-1243"
+
+# for x in credit_number:
+#     print(f"X in credit card: {x}")
+
+
+# for count in range(1, 21):
+#     if count == 13:
+#         continue # continue keyword used to skip over an iteration
+#     else:
+#         print(count)
+
+
+# for count in range(1, 21):
+#     if count == 13:
+#         break # break keyword used to break out of the loop
+#     else:
+#         print(count)
+
+
+# #####################################################################################
+
+# NESTED LOOP
+# = A loop within another loop (outer, inner)
+#   outer loop:
+#       inner
+
+# for count in range(3): # inner loop get executed 3 times
+#     for x in range(1, 10):
+#         print(x, end="") # print on the same line
+#     print()
+
+
+# Exercise 
+
+# rows = int(input("Enter the # of rows: "))
+# columns = int(input("Enter the # of columns: "))
+# symbol = input("Enter a symbol to use: ")
+
+# for count in range(rows):
+#     for x in range(columns):
+#         print(symbol, end="")
+#     print()
+
+
+# #############################################################################
+
+# COLLECTION
+# = single "variable" used to store multiple values
+#   List = [] ordered and changeable. Duplicates Ok
+#   Set = {} unordered and immutable, but Add/Remove Ok. No Duplicates
+#   Tuple = () ordered and unchangeable. Duplicate OK. FASTER
+
+fruits = ["🍏", "🍓", "🍉", "🥑"]
+
+# print(fruits[:3]) # [start: end: step]
+# print(fruits[::2]) # [start: end: step]
+# print(fruits[::-1]) # [start: end: step]
+
+# for fruit in fruits:
+#     print(fruit)
+
+# print(dir(fruits)) # dir() contains all the methods we can use on collections
+# print(help(fruits)) # help() gives you the description of all the methods of the collection.
+
+# print(len(fruits))
+# print("🥝" in fruits) # False
+# print("🍏" in fruits) # True
+
+
+# fruits[0] = "🍐"
+fruits.append("🍒") # append at the end
+# fruits.remove("🥑")
+# fruits.insert(1, "🍋") # insert a value at given index insert(index, value)
+# fruits.sort() # sort in alphabetic order
+# fruits.reverse()
+# fruits.clear()
+# print(fruits.index("🍓")) # return the index
+# print(fruits.index("🥧")) # return the index
+print(fruits.count("🍓"))
+
+for fruit in fruits:
+    print(fruit, end="")
+
+
+
 
 
