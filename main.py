@@ -504,7 +504,8 @@ price3 = 3532822.99
 #   Set = {} unordered and immutable, but Add/Remove Ok. No Duplicates
 #   Tuple = () ordered and unchangeable. Duplicate OK. FASTER
 
-fruits = ["🍏", "🍓", "🍉", "🥑"]
+# LIST []
+# fruits = ["🍏", "🍓", "🍉", "🥑"]
 
 # print(fruits[:3]) # [start: end: step]
 # print(fruits[::2]) # [start: end: step]
@@ -522,7 +523,7 @@ fruits = ["🍏", "🍓", "🍉", "🥑"]
 
 
 # fruits[0] = "🍐"
-fruits.append("🍒") # append at the end
+# fruits.append("🍒") # append at the end
 # fruits.remove("🥑")
 # fruits.insert(1, "🍋") # insert a value at given index insert(index, value)
 # fruits.sort() # sort in alphabetic order
@@ -530,12 +531,92 @@ fruits.append("🍒") # append at the end
 # fruits.clear()
 # print(fruits.index("🍓")) # return the index
 # print(fruits.index("🥧")) # return the index
-print(fruits.count("🍓"))
+# print(fruits.count("🍓"))
 
-for fruit in fruits:
-    print(fruit, end="")
+# for fruit in fruits:
+#     print(fruit, end="")
+
+# SET {}
+
+# fruits = {"🍏", "🍓", "🍉", "🥑", "🍉"}
+
+# print(dir(fruits)) # dir() contains all the methods we can use on collections
+# print(help(fruits)) # help() gives you the description of all the methods of the collection.
+
+# print(len(fruits))
+# print("🥝" in fruits) # False
+# print("🍏" in fruits) # True
+
+
+# fruits.add("🍑")
+# fruits.remove("🍉")
+# fruits.pop() # remove the 1st element
+# fruits.clear()
+
+# print(fruits)
+
+# TUPLE ()
+
+fruits = ("🍏", "🍓", "🍉", "🥑", "🍉")
+
+# print(dir(fruits)) # dir() contains all the methods we can use on collections
+# print(help(fruits)) # help() gives you the description of all the methods of the collection.
+
+# print(len(fruits))
+# print("🥝" in fruits) # False
+# print("🍏" in fruits) # True
 
 
 
+# print(fruits.index("🍏"))
+# print(fruits.count("🍉"))
 
+# for fruit in fruits:
+#     print(fruit)
+
+# #####################################################################################
+
+# 2 D List
+#  2 dimension list = is a list made of lists [[1], [2], [3], ...]
+
+# vegetables = ["🍒", "🍍", "🥙", "🍆", "🍠", "🍓"]
+# snacks = ["🥐", "🍜", "🥪", "🍕"]
+# meats = ["🍖", "🥩", "🐟", "🍗"]
+
+# groceries = [
+#     ["🍒", "🍍", "🥙", "🍆", "🍠", "🍓"], 
+#     ["🥐", "🍜", "🥪", "🍕"], 
+#     ["🍖", "🥩", "🐟", "🍗"]
+#     ]
+
+groceries = [
+    ("🍒", "🍍", "🥙", "🍆", "🍠", "🍓"), 
+    ("🥐", "🍜", "🥪", "🍕"), 
+    ("🍖", "🥩", "🐟", "🍗")
+    ]
+
+# print(groceries[0][1])
+
+# for collection in groceries:
+#     # print(collection)
+#     print(f"collection {groceries.index(collection) + 1}: ")
+#     for food in collection:
+#         print(food, end=" ")
+#     print()
+
+
+# EXERCISE
+num_pad = (
+    (1, 2, 3),
+    (4, 5, 6),
+    (7, 8, 9),
+    ("*", 0, "#")
+    ) # 2D Tuple
+
+
+for row in num_pad:
+    # print(row)
+    for num in row:
+        print(num, end=" ")
+    print()
 
