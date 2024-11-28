@@ -614,9 +614,79 @@ num_pad = (
     ) # 2D Tuple
 
 
-for row in num_pad:
-    # print(row)
-    for num in row:
-        print(num, end=" ")
-    print()
+# for row in num_pad:
+#     # print(row)
+#     for num in row:
+#         print(num, end=" ")
+#     print()
+
+# #######################################################################################
+
+# DICTIONARY
+# = A collection of {key: value} pairs
+#   ordered and changeable. No duplicates
+
+capitals = {
+    "Rwanda": "Kigali",
+    "Uganda": "Kampala",
+    "Kenya": "Nairobi",
+    "Tanzania": "Darisalam",
+    "DRCongo": "Kinshasa"
+    }
+
+# print(dir(capitals))
+# print(help(capitals))
+
+# print(capitals.get("Rwanda"))
+# print(capitals.get("Burundi"))
+
+# if capitals.get("Burundi"):
+#     print("🆗")
+# else:
+#     print("Country not available in the database! ❌")
+
+# capitals.update({"Burundi": "Bujumbura"})
+# capitals.update({"Rwanda": "Higoranyi"})
+# capitals.pop("DRCongo")
+# capitals.popitem() # remove the latest item added
+# capitals.clear()
+
+# print(capitals)
+
+keys = capitals.keys()
+# print(keys)
+
+# for key in keys:
+#     print(key, end=" ")
+
+# values = capitals.values()
+
+# print(values)
+
+items = capitals.items() # return 2D List of tuples [(), (), ()]
+
+# print(items)
+
+# for key, value in items:
+#     print(f"{key}: {value}")
+    
+
+# #####################################################################################
+
+# RANDOM NUMBER
+import random
+
+# print(help(random))
+
+low = 1
+high = 100
+options = ("rock", "paper", "scissors")
+cards = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "As"]
+
+# number = random.randint(low, high) # range(start, end)
+# float_number = random.random()
+# option = random.choice(options)
+# random.shuffle(cards)
+# print(cards)
+
 
