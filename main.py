@@ -267,12 +267,12 @@ is_sunny = True
 # Print or assign one of two values based on a condition 
 # X if condition else Y
 
-num = 7
-a = 6
-b = 7
-age = 25
-temp = 30
-user_role = "admin"
+# num = 7
+# a = 6
+# b = 7
+# age = 25
+# temp = 30
+# user_role = "admin"
 
 # print("Positive" if num > 0 else "Negative")
 # print("Even! 😊" if num % 2 == 0 else "Odd! 😡")
@@ -280,7 +280,7 @@ user_role = "admin"
 # min_num = a if a < b else b
 # status = "Adult 👴" if age > 18 else "Miner/Child 👶"
 # weather = "HOT 🥵" if temp > 20 else "COLD 🥶"
-access_credential = "Full Access 🔑" if user_role == "admin" else "Limited Access 🛅"
+# access_credential = "Full Access 🔑" if user_role == "admin" else "Limited Access 🛅"
 
 # print(access_credential)
 
@@ -688,5 +688,508 @@ cards = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "As"]
 # option = random.choice(options)
 # random.shuffle(cards)
 # print(cards)
+
+# #####################################################################################
+
+# FUNCTION
+# = A block of reusable code
+#   place () after the function name to invoke it
+
+def happy_new_year(name, year):
+    print(f"Happy New year of {year} Mr. {name} 😍🎉")
+    print(f"Success and Health upon our life this {year} 💰👑🤑")
+    print("The grind is mine, but glory is His 😇🙌")
+
+
+# happy_new_year("Ziha", 2025)
+
+def display_invoice(username, amount, due_date):
+    print(f"Hello, happy new year {username}")
+    print(f"Your bill of ${amount:.2f} is due on {due_date}")
+
+
+# display_invoice("ziha.aman", 3000, "01 Dec 2024")
+
+
+# return = statement use to end a function
+#   and send a result back to the caller
+
+def add(num1, num2):
+    return num1 + num2
+
+# result = add(1, 2)
+
+# print(result)
+
+def subtract(x, y):
+    z = x - y
+    return z
+
+def multiply(x, y):
+    z = x * y
+    return z
+
+def divide(x, y):
+    z = x / y
+    return z
+
+
+# print(add(12, 24))
+# print(subtract(12, 24))
+# print(multiply(12, 24))
+# print(divide(12, 24))
+# print(divide(13, 20))
+
+def create_name(first_name, last_name, other_name):
+    first_name = first_name.capitalize()
+    last_name = last_name.upper()
+    other_name = other_name.capitalize()
+
+    return(f"My name is: {first_name} ({other_name}) {last_name}")
+
+# full_name = create_name("aman", "mulume", "kaneza")
+# full_name = create_name("Amani", "Zihalirwa", "")
+
+# print(full_name)
+# print()
+
+# ######################################################################################
+
+# DEFAULT ARGUMENT
+# = A default value for certain parameters
+#   default is used when that argument is omitted
+#   make your functions more flexible, reduces number of arguments
+#   1. positional, 2. DEFAULT, 3.keyword, 4.arbitrary
+
+
+def net_price(list_price, discount=0, tax=0.05):
+    return list_price * (1 - discount) * (1 + tax)
+
+# print(net_price(1000))
+# print(net_price(1000, 0.1))
+
+import time
+
+def count(end, start=0):
+    for x in range(start, end + 1):
+        print(x)
+        time.sleep(1)
+    print("DONE! 🛑")
+
+
+# count(5)
+# count(20, 15)
+
+# ###################################################################################
+
+# KEYWORD ARGUMENT
+#   = an argument preceded by an identifier
+#       helps with readability
+#       order of arguments doesn't matter
+#       1. positional 2. default 3. KEYWORD 4. arbitrary
+
+
+def hello(greeting, title, first, last):
+    print(f"{greeting}, {title}{first} {last}")
+
+# hello("Good night", "Rehemah", "Mm. ", "Kashiling") # Positional arguments
+# hello(first="Rehemah", greeting="Good night", title="Mm. ", last="Kashiling") # Keyword arguments
+
+# for z in range(1, 5):
+#     print(z, end=" ")
+# print("1", "2", "3", "4", "5", sep="-")
+
+
+def get_phone(country, area, first, last):
+    return f"{country}-{area}-{first}-{last}"
+
+phone_number = get_phone(country="256", area="78", first="510", last="2650")
+
+# print(phone_number)
+
+# ###############################################################################
+
+# *args
+#   = allows you to pass multiple  non-key arguments
+#   **kwargs = allows you to pass multiple keyword-arguments
+#       * unpacking operator
+#       1. positional 2. default 3. keyword 4. ARBITRARY(varying amount of arguments)
+
+# def add(a, b):
+#     return a + b
+
+# print(add(1, 2, 3))
+
+# def add(*args):
+#     # print(type(args))
+#     total = 0
+#     for arg in args:
+#         total += arg
+#     return total
+
+# def add(*nums):
+#     # print(type(nums))
+#     total = 0
+#     for num in nums:
+#         total += num
+#     return total
+
+
+# print(add(1, 4, 2))
+
+# def display_name(*args):
+#     for arg in args:
+#         print(arg, end=" ")
+
+
+# display_name("Hacker", "Ziha", "zihalirwa")
+
+# ### **kwargs
+
+def print_address(**kwargs):
+    # print(type(kwargs))
+    # for value in kwargs.values():
+    #     print(value)
+    # for key in kwargs.keys():
+    #     print(key)
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+
+# print_address(street="Buziga Street",
+#                 city="Kampala", 
+#                 state="Uganda", 
+#                 zip="00256")
+
+
+# EXERCISE:
+def shipping_label(*args, **kwargs):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+    # for key, value in kwargs.items():
+    #     print(f"{key}: {value}")
+    if "apt" in kwargs:
+        print(f"{kwargs.get('street')} {kwargs.get('apt')}")
+    elif "pobox" in kwargs:
+        print(f"{kwargs.get('street')} {kwargs.get('pobox')}")
+    else:
+        print(f"{kwargs.get('street')}")
+    
+    print(f"{kwargs.get('city')} {kwargs.get('state')} {kwargs.get('zip')}")
+
+# shipping_label("Mr. ", "Zion", "The Hacker","👨‍💻",
+#                 street="Anonymous",
+#                 apt = "Buzziga Ziha Estate # 1224",
+#                 pobox = "PO BOX 123 ug",
+#                 city="Online",
+#                 state="unknown",
+#                 zip="VPN")
+
+# ####################################################################################
+
+# ITERABLES
+#   = An object/collection that can return its elements one at a time,
+#       allowing it to be iterated over in a loop
+
+# numbers = [1, 2, 3, 4, 5, 6] # lists are considered iterables
+
+# for number in numbers:
+#     print(number, end=" ")
+
+# for number in reversed(numbers):
+#     print(number, end=" ")
+
+# letters = ("a", "b", "c", "d", "e") # Tuples are also iterables
+
+# for letter in letters:
+#     print(letter, end=" ")
+
+fruits = {"🍅", "🍈", "🥧", "🍏", "🍑"} # Sets are iterables but not redressable.
+
+# for fruit in fruits:
+#     print(fruit, end=" ")
+
+name = "Zion Ziha Aman" # strings are iterables
+
+# for chr in name:
+#     print(chr, end="")
+
+# for chr in reversed(name):
+#     print(chr, end="")
+
+# my_dictionary = {"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}
+
+# for key in my_dictionary:
+#     print(key)
+
+# for value in my_dictionary.values():
+#     print(value)
+
+# for key, value in my_dictionary.items():
+#     print(f"{key}: {value}")
+
+
+# ##################################################################################
+
+# MEMBERSHIP OPERATORS
+#   = used to test whether a value or variable is found in a sequence
+#       (string, list, set, or dictionary)
+#       1. in
+#       2. not in
+
+word = "VICTORY"
+
+# user_guess = input("Guess a letter in the secret word: ").upper()
+
+# if user_guess in word:
+#     print("🤗 congrats, yor guess is CORRECT 👍")
+#     print(f"The '{user_guess}' is in the secret word.")
+# else:
+#     print("😬 yor guess is WRONG! 0️⃣")
+
+# if user_guess not in word:
+#     print("😬 yor guess is WRONG! 0️⃣")
+# else:
+#     print("🤗 congrats, yor guess is CORRECT 👍")
+#     print(f"The '{user_guess}' is in the secret word.")
+
+
+students_class_a = {"Ziha", "Majolera", "Kaneza"}
+
+# student = input("Enter a name of a student: ").capitalize()
+
+# if student in students_class_a:
+#     print(f"The student {student} 🙍‍♂️ belong to class A")
+# else:
+#     print(f"Student {student} was not found! ❌")
+
+grades = {"ziha": "A+", 
+            "majolera": "B+", 
+            "kaneza": "B", 
+            "kashiling": "A+", 
+            "muhabura": "A"}
+
+# student = input("Enter the name of the student: ")
+
+# if student in grades:
+#     print(f"Student {student}'s grade is {grades[student]}")
+# else:
+#     print(f"Student {student} was not found! ❌")
+
+# email = input('Enter a valid email: ')
+
+# if "@" in email and "." in email:
+#     print(f"Your '{email}' is a valid email! 🆗")
+# else:
+#     print(f"The '{email}' is invalid, must contained (@ .)! ❌")
+
+# ####################################################################################
+
+# LIST COMPREHENSION
+#   = A concise way to create lists in Python
+#       Compact and easier to read than tradition loops
+#       [expression for value in iterable if condition]
+
+# doubles = []
+
+# for x in range(1, 5):
+#     doubles.append(x * 2)
+
+# print(doubles)
+
+# doubles = [x * 2 for x in range(1, 5)]
+# triples = [y * 3 for y in range(1, 9)]
+# squares = [z * z for z in range(1, 5)]
+
+# print(squares)
+
+fruits = ["apple", "orange", "bananas", "pineapple"]
+
+# fruits_upper = [fruit.upper() for fruit in fruits]
+# fruit_chars = [fruit[0] for fruit in fruits]
+
+# print(fruit_chars)
+
+# numbers = [0, 1, -3, 6, -4, -12, 8, -19]
+# positive_num = [num for num in numbers if num >= 0]
+# negative_num = [num for num in numbers if num < 0]
+# even_num = [num for num in numbers if num % 2 == 0]
+
+# print(even_num)
+
+grades = [30, 46, 95, 84, 75, 62]
+passing_grades = [grade for grade in grades if grade >= 60]
+
+# print(passing_grades)
+
+# #########################################################################
+
+# MATCH-CASE STATEMENT (SWITCH):
+#   = An alternative to using many 'elif' statements
+#       Execute some code if a value matches a 'case'
+#       Benefits: cleaner and syntax is more readable
+
+
+# def days_of_week(day):
+#     match day:
+#         case 1:
+#             return "It's Sunday 🌞"
+#         case 2:
+#             return "It's Monday 💻"
+#         case 3:
+#             return "It's Tuesday 😎"
+
+#         case _:
+#             return "Not a valid day! ❌"
+
+
+# print(days_of_week(""))
+
+
+# def is_weekend(day):
+#     match day:
+#         case "sunday":
+#             return "True, It's Sunday 🌞"
+#         case "monday":
+#             return "No, It's Monday 💻"
+#         case "saturday":
+#             return "Yes, It's Saturday 😎"
+
+#         case _:
+#             return "Not a valid day! ❌"
+
+
+# print(is_weekend("saturday"))
+
+
+def is_weekend(day):
+    match day:
+        case "sunday" | "saturday":
+            return "True, It's weekend 🌞"
+        case "monday" | "tuesday" | "wednesday" | "thursday":
+            return "No, It's week day 💻"
+        case "Friday":
+            return "Yes, It's Friday 🙏 😎"
+
+        case _:
+            return "Not a valid day! ❌"
+
+
+# print(is_weekend("saturday"))
+
+# #########################################################################
+
+# MODULE
+#       = A file containing code you want to include in your program
+#           use 'import' to include a module (built-in or your own)
+#           useful to break up a large program reusable separate files
+
+
+# print(help("modules"))
+
+# import math
+# import math as m
+# from math import pi
+# from math import e
+
+# print(pi)
+
+a, b, c, d, e = 1, 2, 3, 4, 5
+
+# print(math.e ** a)
+# print(math.e ** b)
+# print(math.e ** c)
+# print(math.e ** d)
+
+# import modules.example as example
+import modules.example as example
+
+# result = example.pi
+# result = example.square(2)
+# result = example.cube(3)
+
+
+# print(result)
+
+# ###############################################################################
+
+# VARIABLE SCOPE
+#       = Where a variable is visible and accessible
+# SCOPE RESOLUTION
+#       = (LEGB) lOCAL -> Enclosed -> Global -> Built-in
+
+# LOCAL
+# def func1(): # variable declared in function have local scope, a is local to func1
+#     x = 3
+#     print(x)
+
+
+
+# def func2():
+#     x = 2
+#     print(x)
+
+# ENCLOSED
+
+# def func1(): 
+#     x = 3
+#     def func2():
+#         # x = 2
+#         print(x)
+#     func2()
+
+
+# func1()
+
+# GLOBAL
+
+# def func1():
+#     print(x)
+
+
+
+# def func2():
+#     print(x)
+
+# x = 7
+
+# func1()
+# func2()
+
+# from math import e
+
+# def func1():
+#     print(e)
+
+# e = 8
+
+# func1()
+
+# ##################################################################################
+
+# if __name___ == __main___:  (this statement can be imported OR run standalone)
+#                             Functions and classes in this module can be reused
+#                               without the main block of code executing
+#       GO CHECK script1 & 2
+#       
+# Good practice (code is modular,
+#                   helps readability,
+#                   avoid unintended execution)
+
+
+def main():
+    # program code goes here
+    pass
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
 
 
